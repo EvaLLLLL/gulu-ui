@@ -9,7 +9,7 @@ import { ref } from "vue";
 
 export default {
   props: {
-    value: Boolean
+    value: Boolean,
   },
   setup(props, context) {
     const toggle = () => {
@@ -39,7 +39,7 @@ span {
   width: $h2;
   border-radius: $h2/2;
   background: white;
-  transition: left 250ms;
+  transition: left 350ms;
 }
 button.checked {
   background: skyblue;
@@ -49,5 +49,16 @@ button.checked > span {
 }
 button:focus {
   outline: none;
+}
+button:active {
+  > span {
+    width: $h2 + 4px;
+  }
+}
+button.checked:active {
+  > span {
+    width: $h2 + 4px;
+    margin-left: -4px;
+  }
 }
 </style>
