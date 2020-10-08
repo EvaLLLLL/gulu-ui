@@ -1,3 +1,3 @@
 <template>
 	<div>Tab.vue</div>
-</template>
+</template>w
