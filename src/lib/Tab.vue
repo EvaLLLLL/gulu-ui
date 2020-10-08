@@ -1,3 +1,5 @@
 <template>
-	<div>Tab.vue</div>
+	<div>
+		<slot/>
+	</div>
 </template>w
