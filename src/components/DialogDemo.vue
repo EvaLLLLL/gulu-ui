@@ -6,7 +6,15 @@
     :closeOnClickOverlay="false"
     :ok="f1"
     :cancel="f2"
-  ></Dialog>
+  >
+    <template v-slot:content>
+      <div>你好</div>
+      <div>hi</div>
+    </template>
+    <template v-slot:title>
+      <strong>加粗的标题</strong>
+    </template>
+  </Dialog>
 </template>
 
 <script lang="ts">
@@ -24,8 +32,7 @@ export default {
     const f1 = () => {
       return false;
     };
-    const f2 = () => {
-    };
+    const f2 = () => {};
     return { x, toggle, f1, f2 };
   },
 };
