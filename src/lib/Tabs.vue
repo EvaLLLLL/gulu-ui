@@ -7,6 +7,7 @@
 			     :key="index"
 			     @click="select(t)">{{t}}
 			</div>
+			<div class="gulu-tabs-nav-indicator"></div>
 		</div>
 		<div class="gulu-tabs-content">
 			<component class="gulu-tabs-content-item"
@@ -59,6 +60,7 @@
 			display: flex;
 			color: $color;
 			border-bottom: 1px solid $border-color;
+			position: relative;
 			&-item {
 				padding: 8px 0;
 				margin: 0 16px;
@@ -70,12 +72,20 @@
 					color: $blue;
 				}
 			}
+			&-indicator {
+				position: absolute;
+				height: 3px;
+				background: $blue;
+				left: 0;
+				bottom: -1px;
+				width: 100px;
+			}
 		}
 		&-content {
 			padding: 8px 0;
 			&-item {
 				display: none;
-				&.selected{
+				&.selected {
 					display: block;
 				}
 			}
