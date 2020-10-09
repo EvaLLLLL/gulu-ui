@@ -2,4 +2,4 @@
 	<div>
 		<slot/>
 	</div>
-</template>w
+</template>
