@@ -4,10 +4,11 @@
 			<div class="gulu-tabs-nav-item"
 			     :class="{selected: t===selected}"
 			     v-for="(t,index) in titles"
+			     :ref="el=>{if(el) navItems[index] = el}"
 			     :key="index"
 			     @click="select(t)">{{t}}
 			</div>
-			<div class="gulu-tabs-nav-indicator"></div>
+			<div class="gulu-tabs-nav-indicator" ref="indicator"></div>
 		</div>
 		<div class="gulu-tabs-content">
 			<component class="gulu-tabs-content-item"
@@ -20,7 +21,7 @@
 
 <script lang="ts">
 	import Tab from './Tab.vue';
-	import {computed} from 'vue';
+	import {computed, ref, onMounted} from 'vue';
 	
 	export default {
 		props: {
@@ -29,6 +30,14 @@
 			}
 		},
 		setup(props, context) {
+			const navItems = ref<HTMLDivElement>([]);
+			const indicator = ref<HTMLDivElement>(null);
+			onMounted(() => {
+				const divs = navItems.value;
+				const result = divs.filter(div => div.classList.contains('selected'))[0];
+				const {width} = result.getBoundingClientRect();
+				indicator.value.style.width = width + 'px';
+			});
 			const defaults = context.slots.default();
 			defaults.forEach(tag => {
 				if (tag.type !== Tab) {
@@ -46,7 +55,7 @@
 			const select = (title: string) => {
 				context.emit('update:selected', title);
 			};
-			return {defaults, titles, current, select};
+			return {defaults, titles, current, select, navItems, indicator};
 		}
 	};
 </script>
