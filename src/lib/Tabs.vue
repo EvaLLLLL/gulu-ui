@@ -23,7 +23,7 @@
 
 <script lang="ts">
 	import Tab from './Tab.vue';
-	import {computed, ref, watchEffect, onMounted} from 'vue';
+	import {ref, watchEffect, onMounted} from 'vue';
 	
 	export default {
 		props: {
@@ -50,7 +50,7 @@
 			
 			const defaults = context.slots.default();
 			defaults.forEach(tag => {
-				if (tag.type !== Tab) {
+				if (tag.type.name !== Tab.name) {
 					throw new Error('Tabs子标签必须是Tab');
 				}
 			});
