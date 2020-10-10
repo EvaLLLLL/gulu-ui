@@ -1,5 +1,5 @@
 <demo>
-	禁用用法
+	支持 disabled
 </demo>
 
 <template>
