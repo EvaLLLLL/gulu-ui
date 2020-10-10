@@ -12,8 +12,6 @@ import DialogDemo from './components/DialogDemo.vue';
 // @ts-ignore
 import TabsDemo from './components/TabsDemo.vue';
 // @ts-ignore
-import DocDemo from './components/DocDemo.vue';
-// @ts-ignore
 import {h} from 'vue';
 // @ts-ignore
 import Markdown from './components/Markdown.vue';
@@ -29,7 +27,7 @@ export const router = createRouter({
 		{path: '/', component: Home},
 		{
 			path: '/doc', component: Doc, children: [
-				{path: '', component: DocDemo},
+				{path: '', redirect: '/doc/intro'},
 				{path: 'intro', component: md('intro')},
 				{path: 'get-started', component: md('get-started')},
 				{path: 'install', component: md('install')},
@@ -37,7 +35,6 @@ export const router = createRouter({
 				{path: 'button', component: ButtonDemo},
 				{path: 'dialog', component: DialogDemo},
 				{path: 'tabs', component: TabsDemo},
-			
 			]
 		},
 	

@@ -52,12 +52,22 @@
 	
 	.features {
 		margin: 64px auto;
-		width: 400px;
+		padding: 0 30px;
 		@media (min-width: 800px) {
 			width: 800px;
+			> ul {
+				> li {
+					width: 50%;
+				}
+			}
 		}
 		@media (min-width: 1200px) {
 			width: 1200px;
+			> ul {
+				> li {
+					width: 33.33333%;
+				}
+			}
 		}
 		> ul {
 			display: flex;
@@ -91,25 +101,25 @@
 		/*border-bottom-left-radius: 50% 50px;*/
 		/*border-bottom-right-radius: 50% 50px;*/
 		clip-path: ellipse(80% 60% at 50% 40%);
-	}
-	.banner {
-		color: $color;
-		padding: 100px 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		> .actions {
-			padding: 8px 0;
-			a {
-				margin: 0 8px;
-				background: $green;
-				color: white;
-				display: inline-block;
-				border-radius: $border-radius;
-				padding: 8px 24px;
-				&:hover {
-					text-decoration: none;
+		> .banner {
+			color: $color;
+			padding: 100px 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			> .actions {
+				padding: 8px 0;
+				a {
+					margin: 0 8px;
+					background: $green;
+					color: white;
+					display: inline-block;
+					border-radius: $border-radius;
+					padding: 8px 24px;
+					&:hover {
+						text-decoration: none;
+					}
 				}
 			}
 		}
