@@ -3,7 +3,6 @@
 </demo>
 
 <template>
-	<h1>示例一</h1>
 	<Button @click="toggle">toggle</Button>
 	<Dialog
 			v-model:visible="x"
