@@ -1,5 +1,5 @@
 {
-  "name": "gulu-ui",
+  "name": "gulu-ui-demo",
   "version": "0.0.1",
   "files": ["dist/lib/*"],
   "main": "dist/lib/gulu.js",
