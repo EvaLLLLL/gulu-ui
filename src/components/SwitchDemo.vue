@@ -6,8 +6,7 @@
 
 <script lang="ts">
 	import Demo from '../components/Demo.vue';
-	import Switch from '../lib/Switch.vue';
-	import Button from '../lib/Button.vue';
+	import {Switch, Button} from '../lib/index.ts';
 	import Switch1Demo from '../components/Switch1.demo.vue';
 	import Switch2Demo from '../components/Switch2.demo.vue';
 	
